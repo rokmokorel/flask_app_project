@@ -38,6 +38,6 @@ def preveri_kljuc():
     else:
         return "1"
 
-# if __name__ == "__main__":
-    # db.create_all()
-    # app.run()
+if __name__ == "__main__":
+    db.create_all()
+    app.run()
