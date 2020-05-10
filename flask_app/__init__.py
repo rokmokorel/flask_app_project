@@ -21,8 +21,14 @@ class Gesla(db.Model):
     def __repr__(self):
         return '<Gesla novi key %s >' % self.geslo
 
+@app.route('/ponastavi_bazo', methods = ['GET', 'POST'])
+def ponastavi_bazo():
+    Gesla.query.delete()
+    db.session.commit()
+    return "Baza ponastavljena"
+    
 @app.route('/zahtevaj_kljuc', methods = ['POST'])
-def nov_kljuc():
+def zahtevaj_kljuc():
     skrivni_kljuc = secrets.token_hex(15)
     usr = Gesla(skrivni_kljuc, "uporabnik")
     db.session.add(usr)
