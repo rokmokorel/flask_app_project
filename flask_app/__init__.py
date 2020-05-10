@@ -5,7 +5,7 @@ import secrets
 app = Flask(__name__)
 
 app.config['SECRET_KEY'] = '1A37BbcCJh67'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///gesla.sqlite3'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///gesla.db'
 db = SQLAlchemy(app)
 
 
